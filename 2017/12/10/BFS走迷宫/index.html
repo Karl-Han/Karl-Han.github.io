@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="图灵题目," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Be Excellence">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不群">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="[TOC] ##题目简单的走迷宫的算法，BFS就是把当前的顶点的邻接顶点都入队列，然后队列首端出队列，重复，知道所有的通路，然后一个一个的往回找即可。 ##设定1 ： 为可走地方0 ： 为不可走地方s ： 起点e ： 结束点$6 * 5$12345676 5s 1 0 1 g1 0 1 1 11 0 1 0 01 0 1 1 11 1 1 0 1 1 1 1 1 1 123456s 1 0 1 g">
+<meta name="keywords" content="图灵题目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFS走迷宫">
+<meta property="og:url" content="http://yoursite.com/2017/12/10/BFS走迷宫/index.html">
 <meta property="og:site_name" content="不群">
-<meta property="og:description" content="Be Excellence">
+<meta property="og:description" content="[TOC] ##题目简单的走迷宫的算法，BFS就是把当前的顶点的邻接顶点都入队列，然后队列首端出队列，重复，知道所有的通路，然后一个一个的往回找即可。 ##设定1 ： 为可走地方0 ： 为不可走地方s ： 起点e ： 结束点$6 * 5$12345676 5s 1 0 1 g1 0 1 1 11 0 1 0 01 0 1 1 11 1 1 0 1 1 1 1 1 1 123456s 1 0 1 g">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-10T07:48:38.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不群">
-<meta name="twitter:description" content="Be Excellence">
+<meta name="twitter:title" content="BFS走迷宫">
+<meta name="twitter:description" content="[TOC] ##题目简单的走迷宫的算法，BFS就是把当前的顶点的邻接顶点都入队列，然后队列首端出队列，重复，知道所有的通路，然后一个一个的往回找即可。 ##设定1 ： 为可走地方0 ： 为不可走地方s ： 起点e ： 结束点$6 * 5$12345676 5s 1 0 1 g1 0 1 1 11 0 1 0 01 0 1 1 11 1 1 0 1 1 1 1 1 1 123456s 1 0 1 g">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/10/BFS走迷宫/"/>
 
 
 
 
 
-  <title>不群</title>
+  <title>BFS走迷宫 | 不群</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/BFS走迷宫/" itemprop="url">BFS走迷宫</a></h1>
+          <h1 class="post-title" itemprop="name headline">BFS走迷宫</h1>
         
 
         <div class="post-meta">
@@ -301,9 +300,7 @@
       
 
       
-        
-          
-            <p>[TOC]</p>
+        <p>[TOC]</p>
 <p>##题目<br>简单的走迷宫的算法，BFS就是把当前的顶点的邻接顶点都入队列，然后队列首端出队列，重复，知道所有的通路，然后一个一个的往回找即可。</p>
 <p>##设定<br>1 ： 为可走地方<br>0 ： 为不可走地方<br>s ： 起点<br>e ： 结束点<br>$6 * 5$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6 5</span><br><span class="line">s 1 0 1 g</span><br><span class="line">1 0 1 1 1</span><br><span class="line">1 0 1 0 0</span><br><span class="line">1 0 1 1 1</span><br><span class="line">1 1 1 0 1 </span><br><span class="line">1 1 1 1 1</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s 1 0 1 g</span><br><span class="line">1 0 1 1 1</span><br><span class="line">1 0 1 0 0</span><br><span class="line">1 0 1 1 1</span><br><span class="line">1 1 1 0 1 </span><br><span class="line">1 1 1 1 1</span><br></pre></td></tr></table></figure>
@@ -326,8 +323,6 @@
 <li>gdb！！！！！orz</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -342,327 +337,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/littleYellowBook/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K.H">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不群">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/littleYellowBook/" itemprop="url">小黄书第六章正交</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T15:39:29+08:00">
-                2017-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/图灵题目/" rel="tag"># 图灵题目</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="内积，长度和正交性"><a href="#内积，长度和正交性" class="headerlink" title="内积，长度和正交性"></a>内积，长度和正交性</h2><h3 id="内积"><a href="#内积" class="headerlink" title="内积"></a>内积</h3><h4 id="定义是-uT-v"><a href="#定义是-uT-v" class="headerlink" title="定义是:uT v"></a>定义是:uT v</h4><blockquote>
-<p>当然可以直接用矩阵的乘法解释定理<br>明显的定理，我觉得完全可以直接引入几何意义<br>参考维基百科的数量积</p>
-</blockquote>
-<h3 id="向量的长度"><a href="#向量的长度" class="headerlink" title="向量的长度"></a>向量的长度</h3><blockquote>
-<p>很明显，忽略</p>
-</blockquote>
-<h3 id="两个向量之间的距离"><a href="#两个向量之间的距离" class="headerlink" title="两个向量之间的距离"></a>两个向量之间的距离</h3><h4 id="定义和新的表达方式"><a href="#定义和新的表达方式" class="headerlink" title="定义和新的表达方式"></a>定义和新的表达方式</h4><p>dist(u,v) = ||u -v ||</p>
-<blockquote>
-<p>我的锅，这里指的是顶点之间的距离<br>两个向量的距离等于他们的差的那个向量的长度(书上定义写了<br>怎么感觉它和我理解的不同<br>事实证明，它还是有用的，正交向量这样解释也可以</p>
-</blockquote>
-<h3 id="正交向量"><a href="#正交向量" class="headerlink" title="正交向量"></a>正交向量</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>定理二，就是衍生</p>
-<blockquote>
-<p>用向量距离就好了，也不错</p>
-</blockquote>
-<h3 id="正交补"><a href="#正交补" class="headerlink" title="正交补"></a>正交补</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><h4 id="定理三就是上面那句话"><a href="#定理三就是上面那句话" class="headerlink" title="定理三就是上面那句话"></a>定理三就是上面那句话</h4><p>行空间和零空间正交，列空间和左零空间正交的证明，书上有</p>
-<blockquote>
-<p>这个还好，我觉得完全可以直接gsla</p>
-</blockquote>
-<h3 id="下一个不讲了"><a href="#下一个不讲了" class="headerlink" title="下一个不讲了"></a>下一个不讲了</h3><h2 id="正交集"><a href="#正交集" class="headerlink" title="正交集"></a>正交集</h2><h3 id="正交集-1"><a href="#正交集-1" class="headerlink" title="正交集"></a>正交集</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><blockquote>
-<p>(谁这么无聊把条件结论调转的？)</p>
-</blockquote>
-<h4 id="定理四"><a href="#定理四" class="headerlink" title="定理四"></a>定理四</h4><blockquote>
-<p>通过正交集的定义可知，就是子空间的一组正交基嘛</p>
-<p>你这个破定义怎么乱跑？</p>
-</blockquote>
-<h4 id="定理五"><a href="#定理五" class="headerlink" title="定理五"></a>定理五</h4><blockquote>
-<p>定理五不就是Ac = y吗，还有我觉得这个定理五就已经推出了这么多东西，怎么藏着掖着<br>gsla对那个投影的三个公式</p>
-</blockquote>
-<h3 id="正交投影"><a href="#正交投影" class="headerlink" title="正交投影"></a>正交投影</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><blockquote>
-<p>直接gsla就好啦，为什么故意弄个正交投影，直接上投影<br>最小二乘法的笔记挺好的</p>
-</blockquote>
-<h3 id="力的分量-略"><a href="#力的分量-略" class="headerlink" title="力的分量(略)"></a>力的分量(略)</h3><h3 id="单位正交集"><a href="#单位正交集" class="headerlink" title="单位正交集"></a>单位正交集</h3><blockquote>
-<p>这不是坑人吗？总是分成没意义的细碎，直接gram schmidt就好啦！</p>
-</blockquote>
-<h4 id="定理六"><a href="#定理六" class="headerlink" title="定理六"></a>定理六</h4><blockquote>
-<p>感觉这个定理不错，首先满列秩，然后用条件</p>
-</blockquote>
-<h4 id="定理七"><a href="#定理七" class="headerlink" title="定理七"></a>定理七</h4><blockquote>
-<p>只是旋转了呀。<br>不影响点积<br>明显</p>
-</blockquote>
-<h2 id="正交投影-1"><a href="#正交投影-1" class="headerlink" title="正交投影"></a>正交投影</h2><blockquote>
-<p>哎呀，直接最小二乘，不累赘了</p>
-<h3 id="正交投影-2"><a href="#正交投影-2" class="headerlink" title="正交投影"></a>正交投影</h3><h4 id="定理八"><a href="#定理八" class="headerlink" title="定理八"></a>定理八</h4><p>用矩阵和正交理解就好了</p>
-</blockquote>
-<h3 id="几何解释"><a href="#几何解释" class="headerlink" title="几何解释"></a>几何解释</h3><blockquote>
-<p>一直都在几何解释</p>
-</blockquote>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><h4 id="定理九"><a href="#定理九" class="headerlink" title="定理九"></a>定理九</h4><blockquote>
-<p>用三角形。。。最小二乘</p>
-</blockquote>
-<h4 id="定理十"><a href="#定理十" class="headerlink" title="定理十"></a>定理十</h4><blockquote>
-<p>早就说了，看清本质就好，要这么多定理干啥<br>我也不知道怎么解释好了，太细碎了</p>
-</blockquote>
-<h2 id="Gram-Schmidt"><a href="#Gram-Schmidt" class="headerlink" title="Gram-Schmidt"></a>Gram-Schmidt</h2><h4 id="定理十一"><a href="#定理十一" class="headerlink" title="定理十一"></a>定理十一</h4><blockquote>
-<p>用gsla讲</p>
-</blockquote>
-<h3 id="标准正交基"><a href="#标准正交基" class="headerlink" title="标准正交基"></a>标准正交基</h3><h3 id="QR分解"><a href="#QR分解" class="headerlink" title="QR分解"></a>QR分解</h3><h4 id="定理十二"><a href="#定理十二" class="headerlink" title="定理十二"></a>定理十二</h4><blockquote>
-<p>挺重要的，但是我不知道应用<br><strong>注意这里的R和我平时理解的不同</strong><br>这里是上三角</p>
-</blockquote>
-<h2 id="最小二乘问题"><a href="#最小二乘问题" class="headerlink" title="最小二乘问题"></a>最小二乘问题</h2><h4 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h4><h4 id="定理十三"><a href="#定理十三" class="headerlink" title="定理十三"></a>定理十三</h4><blockquote>
-<p>证明零空间的解一样就好了</p>
-</blockquote>
-<h4 id="定理十四"><a href="#定理十四" class="headerlink" title="定理十四"></a>定理十四</h4><blockquote>
-<p>不就是推出来的公式吗</p>
-</blockquote>
-<h4 id="定理十五"><a href="#定理十五" class="headerlink" title="定理十五"></a>定理十五</h4><p>我真的不会应用QR在这里</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="K.H">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不群">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/10/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T14:15:15+08:00">
-                2017-12-10
-              </time>
+              <a href="/2017/12/10/littleYellowBook/" rel="next" title="小黄书第六章正交">
+                <i class="fa fa-chevron-left"></i> 小黄书第六章正交
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -672,10 +376,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -683,6 +388,8 @@
 
 
           
+  
+
 
         </div>
         
@@ -876,6 +583,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
