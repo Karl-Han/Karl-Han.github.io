@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/正交教案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/11/正交教案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="K.H">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/10/正交教案/" itemprop="url">GSLA教案</a></h1>
+                <a class="post-title-link" href="/2017/12/11/正交教案/" itemprop="url">GSLA教案</a></h1>
         
 
         <div class="post-meta">
@@ -263,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T20:57:15+08:00">
-                2017-12-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T13:41:03+08:00">
+                2017-12-11
               </time>
             
 
@@ -303,8 +303,7 @@
       
         
           
-            <p>[TOC]</p>
-<h3 id="教材：Introduction-to-linear-algebra"><a href="#教材：Introduction-to-linear-algebra" class="headerlink" title="教材：Introduction to linear algebra"></a>教材：Introduction to linear algebra</h3><h4 id="内容：正交"><a href="#内容：正交" class="headerlink" title="内容：正交"></a>内容：正交</h4><h5 id="Part-1-四大子空间的正交性"><a href="#Part-1-四大子空间的正交性" class="headerlink" title="Part 1:四大子空间的正交性"></a>Part 1:四大子空间的正交性</h5><p>正交是什么：其实就是垂直嘛！(两个垂直的面不正交)</p>
+            <h3 id="教材：Introduction-to-linear-algebra"><a href="#教材：Introduction-to-linear-algebra" class="headerlink" title="教材：Introduction to linear algebra"></a>教材：Introduction to linear algebra</h3><h4 id="内容：正交"><a href="#内容：正交" class="headerlink" title="内容：正交"></a>内容：正交</h4><h5 id="Part-1-四大子空间的正交性"><a href="#Part-1-四大子空间的正交性" class="headerlink" title="Part 1: 四大子空间的正交性"></a>Part 1: 四大子空间的正交性</h5><p>正交是什么：其实就是垂直嘛！(两个垂直的面不正交)</p>
 <blockquote>
 <p>来，打个脸：墙和地面垂直，他们正不正交？并不正交，因为并不满足定义。他们存在一个共同的线，和各自的面并不垂直，所以不正交</p>
 </blockquote>
@@ -339,7 +338,7 @@
 <p>​    得证。</p>
 <p>（方法二）</p>
 <p>​    <img src="/images/proof2.png" alt="proof2"></p>
-<p>​    从上面可以看出，row I x = 0。（不这么明显，因为他这里转置了，只需要把行转置一下，然后加上点乘的点就好了） </p>
+<p>​    从上面可以看出，row I x = 0。（不这么明显，因为他这里转置了，只需要把行转置一下，然后加上点乘的点就好了）</p>
 <p>同理可得列空间和左零空间正交。</p>
 <p>好的，证明完这部分以后，我们来了解一个概念：正交补。</p>
 <p>正交补的定义：对于一个子空间A，它的正交补是一个包含所有与A中任意向量都正交的过原点的向量的集合。</p>
@@ -369,7 +368,7 @@
 <p>​    由e与子空间S正交可得：</p>
 <p>​        A·(b - A x-hat ) = 0</p>
 <p>​        化简得 ：</p>
-<p>​        x-hat = (A^T A) ^-1 A^T b    </p>
+<p>​        x-hat = (A^T A) ^-1 A^T b</p>
 <p>同时，我们可以由三角形的性质，证明投影使得p最接近b。这样，在实际情况中，我们能对Ax = b无解进行操作，来获得最接近于b的最优解p。这个和我们后面的最小二乘法也有关系，不急。</p>
 <p>恩，其实这章十分看重对A^T A形成的n*n矩阵的性质，在这里就简单概述一下：</p>
 <ol>
@@ -380,7 +379,7 @@
 <p>​    x-hat = (A^T A)^-1 A b</p>
 <p>由此我们也可以推得：</p>
 <p>​    p = A x-hat = A (A^T A)^-1 A^T b</p>
-<p>我们定义一个投影矩阵，P，使得Pb = p </p>
+<p>我们定义一个投影矩阵，P，使得Pb = p</p>
 <p>​    故 P = A (A^T A)^-1 A^T</p>
 <p>这个矩阵可以帮我们把空间中所有的向量投影到S上。</p>
 <p>这个P有几个性质：</p>
@@ -399,6 +398,41 @@
 <p>从图上看，会是这个样子：</p>
 <p><img src="/images/pictureOfLeastSquare.png" alt="pictureOfLeastSquare"></p>
 <p>下面，我们就来演示一下最小二乘法的使用：</p>
+<p>条件：对于点(0,6),(1,0),(2,0)，我们想找一个曲线（直线也是曲线），来拟合它。这个时候我们就可以使用最小二乘法。</p>
+<blockquote>
+<p>其实高中也将过，只不过那个时候叫做回归曲线分析而已</p>
+</blockquote>
+<p>我们想要找这样的一个 y = C + D t，使得每一个点竖直方向上到直线的误差最小，因此，我们就得到了这样的一个方程式：</p>
+<p><img src="/images/equationsOfThreePoint.png" alt="equationsOfThreePoint"></p>
+<p>很明显，不存在这样的一条直线可以穿过这三个点。从矩阵的角度，这样的方程式变成了：</p>
+<p><img src="/images/matrixOfThreePoint.png" alt="matrixOfThreePoint"></p>
+<p>我们使用上一节的知识，可以找到这样的一个x-hat，使得误差最小。一个简单的过程如下：</p>
+<p><img src="/images/processOfTheThreePoint1.png" alt="processOfTheThreePoint1"></p>
+<p><img src="/images/processOfTheThreePoint2.png" alt="processOfTheThreePoint4"></p>
+<p><img src="/images/processOfTheThreePoint3.png" alt="processOfTheThreePoint3"></p>
+<p><img src="/images/processOfTheThreePoint4.png" alt="processOfTheThreePoint2"></p>
+<p>这里也给出了一个投影矩阵P，这无关紧要啦，主要是那个x-hat中对应的C和D，在几何上就是：</p>
+<p><img src="/images/exampleOfLeastSquare.png" alt="exampleOfLeastSquare"></p>
+<p>而如果我们看向矩阵的话，那么就变成了：</p>
+<p><img src="/images/pictureOfTheThreePointOnSubspace.png" alt="pictureOfTheThreePointOnSubspace"></p>
+<p>哇！多神奇的一件事情，方程问题变成了一个矩阵的问题，很美妙吧！</p>
+<p>虽然说我们会用 E = ||e1||^2 + ||e2||^2 + ||e3||^2来研究上面 y = C + D t的误差，但是如果从子空间的角度来理解的话，不是会更加直观一点吗？</p>
+<p>这就是最小二乘法的拟合方式。</p>
+<h5 id="Part-4：正交基和Gram-Schmidt"><a href="#Part-4：正交基和Gram-Schmidt" class="headerlink" title="Part 4：正交基和Gram Schmidt"></a>Part 4：正交基和Gram Schmidt</h5><p>这一部分下次有机会再讲吧！</p>
+<blockquote>
+<p>其实真实情况是我的A = QR 还没搞定，不好讲2333333333</p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节课主要讲了以下几点：</p>
+<ol>
+<li>四大子空间是什么以及它们的正交关系</li>
+<li>投影是什么以及如何将线投到面上面</li>
+<li>最小二乘法是什么以及矩阵中的应用</li>
+<li>（没有第四点了）</li>
+</ol>
+<h4 id="和小黄书上的区别"><a href="#和小黄书上的区别" class="headerlink" title="和小黄书上的区别"></a>和小黄书上的区别</h4><ol>
+<li>通俗、直观</li>
+<li>简单、明了</li>
+</ol>
 
           
         
